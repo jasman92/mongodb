@@ -1,0 +1,23 @@
+# BEFORE UPDATING ONE DOCUMENT IN ORDERS COLLECTION
+
+collection1 = db.orders
+for rec1 in collection1.find():
+    print(rec1)
+
+print("\n")
+
+# CODE TO UPDATE ONE DOCUMENT IN ORDERS COLLECTION
+col1 = db.orders
+result = col1.update_many(
+    {"ord_id" : 8},
+    {
+        "$set": {
+            "status" : "P"
+        }
+
+    }
+)
+# AFTER UPDATING ORDERS IS LIKE:
+collection1 = db.orders
+for rec1 in collection1.find():
+    print(rec1)
